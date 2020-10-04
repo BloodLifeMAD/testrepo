@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 public class home extends AppCompatActivity {
-    private CardView eCard,cCard1,cCard2;
+    private CardView eCard,cCard1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +19,7 @@ public class home extends AppCompatActivity {
 
         eCard=findViewById(R.id.card);
         cCard1=findViewById(R.id.cContact);
-        cCard2=findViewById(R.id.event);
+
 
         eCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,12 +35,7 @@ public class home extends AppCompatActivity {
             }
         });
 
-        cCard2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(home.this,MainEvent.class));
-            }
-        });
+
 
 
 

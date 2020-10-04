@@ -1,6 +1,7 @@
 package com.example.bloodlife;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -54,8 +55,7 @@ public class Register extends AppCompatActivity {
 
 
     private void clearControls(){
-        txtID.setText("");
-        txtName.setText("");
+
 
     }
 
@@ -134,6 +134,10 @@ public class Register extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Please Enter ID", Toast.LENGTH_SHORT).show();
                     else if(TextUtils.isEmpty(txtName.getText().toString()))
                         Toast.makeText(getApplicationContext(), "Please Enter Name", Toast.LENGTH_SHORT).show();
+                    else if(TextUtils.isEmpty(eEmail.getText().toString()))
+                        Toast.makeText(getApplicationContext(),"Please Enter Valid Email",Toast.LENGTH_LONG).show();
+                    else if(TextUtils.isEmpty(ePassword.getText().toString()))
+                        Toast.makeText(getApplicationContext(),"Enter valid password ",Toast.LENGTH_LONG).show();
                     else {
                         std.setId(txtID.getText().toString().trim());
                         std.setName(txtName.getText().toString().trim());
@@ -144,6 +148,9 @@ public class Register extends AppCompatActivity {
                         dbRef.child("std1").setValue(std);
                         Toast.makeText(getApplicationContext(), "Data Entered Successfully", Toast.LENGTH_SHORT).show();
                         clearControls();
+                        new AlertDialog.Builder(Register.this)
+                                .setTitle("Enterd Details")
+                                .setMessage("ID :"+ txtID.getText()+"\n\nName :"+txtName.getText()+"\n\nYour Email is :"+eEmail.getText()).show();
 
                         displayNotification();
 

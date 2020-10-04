@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainEvent"></activity>
-        <activity android:name=".BMI" />
+        <activity android:name=".ManageActivity"></activity>
+        <activity android:name=".Feedback" />
         <activity android:name=".home" />
         <activity android:name=".Contact_Us" />
         <activity android:name=".Register" />
@@ -21,7 +21,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BloodDonate">
+        <activity android:name=".BloodRequest">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

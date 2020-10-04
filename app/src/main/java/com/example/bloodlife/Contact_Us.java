@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 public class Contact_Us extends AppCompatActivity {
     private EditText mName,mSubject,mMessage;
-    Button mSend,mBack;
+    Button mSend,mBack,mFeed;
 
 
     @Override
@@ -25,6 +25,7 @@ public class Contact_Us extends AppCompatActivity {
 
         mSend=findViewById(R.id.btnSend);
         mBack=findViewById(R.id.btnBack);
+        mFeed=findViewById(R.id.btnFeed);
 
         mBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +38,13 @@ public class Contact_Us extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 sendMail();
+            }
+        });
+
+        mFeed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Contact_Us.this,Feedback.class));
             }
         });
 

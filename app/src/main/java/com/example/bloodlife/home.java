@@ -19,6 +19,8 @@ public class home extends AppCompatActivity {
 
         eCard=findViewById(R.id.card);
         cCard=findViewById(R.id.cContact);
+        cCard=findViewById(R.id.profile);
+        cCard=findViewById(R.id.event);
 
         eCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +35,21 @@ public class home extends AppCompatActivity {
                 startActivity(new Intent(home.this,Contact_Us.class));
             }
         });
+
+        cCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(home.this,ProfileActivity.class));
+            }
+        });
+
+        cCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(home.this,DonationEventMain.class));
+            }
+        });
+
 
 
     }

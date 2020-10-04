@@ -25,7 +25,7 @@ public class home extends AppCompatActivity {
         eCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(home.this,BloodRequest.class));
+                startActivity(new Intent(home.this,BMI.class));
             }
         });
 
@@ -36,19 +36,7 @@ public class home extends AppCompatActivity {
             }
         });
 
-        cCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(home.this,ProfileActivity.class));
-            }
-        });
 
-        cCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(home.this,DonationEventMain.class));
-            }
-        });
 
 
 

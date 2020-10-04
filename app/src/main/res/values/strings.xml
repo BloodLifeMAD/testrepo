@@ -6,15 +6,13 @@
     <string name="hos">Hospital</string>
     <string name="pno">Enter Phone Number</string>
 
-    //DONATION EVENT
-    <string name="get_ready_to_help_some_people_lives_by_giving_out_some_drop_of_blood">Get ready to help some people lives by giving out some drop of blood</string>
-    <string name="event_name">Event Name</string>
-    <string name="address">Address</string>
-    <string name="date">Date</string>
-    <string name="time">Time</string>
-    <string name="contact_number">Contact Number</string>
-    <string name="add">ADD</string>
-    <string name="view">View</string>
-    <string name="update">UPDATE</string>
-    <string name="delete">DELETE</string>
+    <string name="weight">Enter Your Weight</string>
+    <string name="height">Enter the Height</string>
+    <string name="btncal">Find BMI</string>
+    <string name="under">Under Weight</string>
+    <string name="normal">Normal Weight</string>
+    <string name="over">Over Weight</string>
+    <string name="obesity">Obesity</string>
+    <string name="Name">Enter your Name</string>
+    <string name="Units">Number of Units</string>
 </resources>

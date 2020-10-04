@@ -3,7 +3,6 @@ package com.example.bloodlife;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -17,14 +16,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class BloodRequest extends AppCompatActivity {
+public class BloodDonate extends AppCompatActivity {
 
 
-    EditText Name,blgrp,Unit,Hos,Phone;
-    Button btadd,BtnShow,btnUpdate,btnDEl;
+    EditText Name, blgrp, Unit, Hos, Phone;
+    Button btadd, BtnShow, btnUpdate, btnDel;
     DatabaseReference dbRef;
 
-    Request RE;
+    Donar DE;
 
     private void clearControls() {
 
@@ -38,31 +37,28 @@ public class BloodRequest extends AppCompatActivity {
     }
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_blood_donate);
+
 
         Name = findViewById(R.id.name);
         blgrp = findViewById(R.id.bgrp);
-        Unit=findViewById(R.id.units);
-        Hos=findViewById(R.id.hos);
-        Phone=findViewById(R.id.Pno);
+        Unit = findViewById(R.id.units);
+        Hos = findViewById(R.id.hos);
+        Phone = findViewById(R.id.Pno);
 
         btadd = findViewById(R.id.add);
-        BtnShow=findViewById(R.id.btnShow);
-        btnUpdate=findViewById(R.id.btnUp);
-        btnDEl=findViewById(R.id.btDel);
+        BtnShow = findViewById(R.id.btnShow);
+        btnUpdate = findViewById(R.id.btnUp);
 
-
-        RE=new Request();
-
+        DE = new Donar();
         btadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                dbRef = FirebaseDatabase.getInstance().getReference().child("Request");
+                dbRef = FirebaseDatabase.getInstance().getReference().child("Donar");
 
                 try {
                     if (TextUtils.isEmpty(Name.getText().toString()))
@@ -76,16 +72,15 @@ public class BloodRequest extends AppCompatActivity {
 
                     else {
 
-                        RE.setBlgrp(blgrp.getText().toString().trim());
-                        RE.setPno(Integer.parseInt(Phone.getText().toString().trim()));
-                        RE.setName(Name.getText().toString().trim());
-                        RE.setHos(Hos.getText().toString().trim());
-                        RE.setUnits(Unit.getText().toString().trim());
-
+                        DE.setBlgrp(blgrp.getText().toString().trim());
+                        DE.setPno(Integer.parseInt(Phone.getText().toString().trim()));
+                        DE.setName(Name.getText().toString().trim());
+                        DE.setHos(Hos.getText().toString().trim());
+                        DE.setUnits(Unit.getText().toString().trim());
 
 
                         //dbRef.push().setValue(RE);
-                        dbRef.child("R1").setValue(RE);
+                        dbRef.child("DE").setValue(DE);
                         Toast.makeText(getApplicationContext(), "Data entered success", Toast.LENGTH_SHORT).show();
                         clearControls();
                     }
@@ -95,16 +90,17 @@ public class BloodRequest extends AppCompatActivity {
             }
 
         });
+
         //show the data what is in the database
         BtnShow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Request").child("R1");
+                DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Donar").child("DE");
                 readRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                        if(dataSnapshot.hasChildren()){
+                        if (dataSnapshot.hasChildren()) {
                             Name.setText(dataSnapshot.child("name").getValue().toString());
                             blgrp.setText(dataSnapshot.child("blgrp").getValue().toString());
                             Unit.setText(dataSnapshot.child("units").getValue().toString());
@@ -112,10 +108,8 @@ public class BloodRequest extends AppCompatActivity {
                             Phone.setText(dataSnapshot.child("pno").getValue().toString());
 
 
-
-                        }
-                        else
-                            Toast.makeText(getApplicationContext(),"NO DATA SOURCE TO DISPLAY",Toast.LENGTH_SHORT).show();
+                        } else
+                            Toast.makeText(getApplicationContext(), "NO DATA SOURCE TO DISPLAY", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -125,33 +119,31 @@ public class BloodRequest extends AppCompatActivity {
                 });
             }
         });
-
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference upRef=FirebaseDatabase.getInstance().getReference().child("Request");
+                DatabaseReference upRef = FirebaseDatabase.getInstance().getReference().child("Donar");
                 upRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChild("R1"))
+                        if (dataSnapshot.hasChild("DE"))
                             try {
-                                RE.setName(Name.getText().toString().trim());
-                                RE.setBlgrp(blgrp.getText().toString().trim());
-                                RE.setUnits(Unit.getText().toString().trim());
-                                RE.setHos(Hos.getText().toString().trim());
-                                RE.setPno(Integer.parseInt(Phone.getText().toString().trim()));
+                                DE.setName(Name.getText().toString().trim());
+                                DE.setBlgrp(blgrp.getText().toString().trim());
+                                DE.setUnits(Unit.getText().toString().trim());
+                                DE.setHos(Hos.getText().toString().trim());
+                                DE.setPno(Integer.parseInt(Phone.getText().toString().trim()));
 
-                                dbRef = FirebaseDatabase.getInstance().getReference().child("Request");
-                                dbRef.setValue(RE);
+                                dbRef = FirebaseDatabase.getInstance().getReference().child("Donar");
+                                dbRef.setValue(DE);
                                 clearControls();
                                 Toast.makeText(getApplicationContext(), "Data Updated successfully", Toast.LENGTH_SHORT).show();
-                            }
-                            catch (NumberFormatException e){
-                                Toast.makeText(getApplicationContext(),"Invalid Contact Number",Toast.LENGTH_SHORT).show();
+                            } catch (NumberFormatException e) {
+                                Toast.makeText(getApplicationContext(), "Invalid Contact Number", Toast.LENGTH_SHORT).show();
                             }
                         else
-                            Toast.makeText(getApplicationContext(),"No source to update",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "No source to update", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -165,34 +157,5 @@ public class BloodRequest extends AppCompatActivity {
 
 
 
-    btnDEl.setOnClickListener((new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            DatabaseReference delRef=FirebaseDatabase.getInstance().getReference().child("Request");
-            delRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if(dataSnapshot.hasChild("R1")){
-                        dbRef=FirebaseDatabase.getInstance().getReference().child("Request");
-                        dbRef.removeValue();
-                        clearControls();
-                        Toast.makeText(getApplicationContext(),"Data Deleted Successfully",Toast.LENGTH_SHORT).show();
-                    }
-                        else
-                            Toast.makeText(getApplicationContext(),"No Data Source",Toast.LENGTH_SHORT).show();
-
-
-
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                }
-            });
         }
-    }));
-
     }
-}

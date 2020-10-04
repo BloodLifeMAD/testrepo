@@ -1,19 +1,26 @@
 package com.example.bloodlife;
 
-public class Request {
-
+public class Donar {
     private String Name;
     private String blgrp;
     private String units;
     private String hos;
     private Integer pno;
 
-    public Integer getPno() {
-        return pno;
+    public String getName() {
+        return Name;
     }
 
-    public void setPno(Integer pno) {
-        this.pno = pno;
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public String getBlgrp() {
+        return blgrp;
+    }
+
+    public void setBlgrp(String blgrp) {
+        this.blgrp = blgrp;
     }
 
     public String getUnits() {
@@ -32,22 +39,14 @@ public class Request {
         this.hos = hos;
     }
 
-    public String getName() {
-        return Name;
+    public Integer getPno() {
+        return pno;
     }
 
-    public void setName(String name) {
-        this.Name = name;
+    public void setPno(Integer pno) {
+        this.pno = pno;
     }
 
-    public String getBlgrp() {
-        return blgrp;
-    }
-
-    public void setBlgrp(String blgrp) {
-        this.blgrp = blgrp;
-    }
-
-    public Request() {
+    public Donar() {
     }
 }

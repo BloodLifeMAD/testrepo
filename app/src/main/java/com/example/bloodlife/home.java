@@ -8,22 +8,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 public class home extends AppCompatActivity {
-    private CardView eCard,cCard1;
+    private CardView cCard,cCard1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        super.onCreate ( savedInstanceState );
         setContentView(R.layout.activity_home);
 
 
 
-        eCard=findViewById(R.id.card);
+        cCard=findViewById(R.id.card);
         cCard1=findViewById(R.id.cContact);
 
 
-        eCard.setOnClickListener(new View.OnClickListener() {
+        cCard.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v) {
+            public void onClick(View v){
                 startActivity(new Intent(home.this,BMI.class));
             }
         });

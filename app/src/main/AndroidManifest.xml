@@ -9,18 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Blood" />
+        <activity android:name=".BMI" />
         <activity android:name=".Feedback" />
         <activity android:name=".home" />
         <activity android:name=".Contact_Us" />
         <activity android:name=".Register" />
         <activity android:name=".Login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".BloodDonate">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

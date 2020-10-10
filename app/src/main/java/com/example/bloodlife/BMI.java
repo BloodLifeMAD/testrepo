@@ -18,7 +18,7 @@ public class BMI extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_b_m_i);
+        setContentView(R.layout.activity_bmi);
 
         height = (EditText) findViewById(R.id.Height);
         weight = (EditText) findViewById(R.id.Weight);
@@ -29,7 +29,7 @@ public class BMI extends AppCompatActivity {
         donor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(BMI.this,BloodDonate.class));
+                startActivity(new Intent(BMI.this,Blood.class));
             }
         });
 

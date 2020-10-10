@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Blood" />
         <activity android:name=".BMI" />
+        <activity android:name=".MainEvent" />
         <activity android:name=".Feedback" />
         <activity android:name=".home" />
         <activity android:name=".Contact_Us" />

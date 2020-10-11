@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -20,6 +21,7 @@ public class Blood extends AppCompatActivity {
 
 
     EditText Name, blgrp, Unit, Hos, Phone;
+    Spinner spinner1,spinner2;
     Button btadd, BtnShow, btnUpdate, btnDel;
     DatabaseReference dbRef;
 

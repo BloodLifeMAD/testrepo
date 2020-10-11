@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back"
-    tools:context=".BloodRequest">
+    tools:context=".Blood">
 
     <EditText
         android:id="@+id/name"
@@ -50,7 +50,7 @@
         android:layout_width="123dp"
         android:layout_height="54dp"
         android:background="@drawable/buttonstylepink"
-        android:text="Request"
+        android:text="Post"
         android:textSize="18sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -65,7 +65,7 @@
         android:layout_width="365dp"
         android:layout_height="72dp"
         android:ems="10"
-        android:hint="Number of Units"
+        android:hint="Division"
         android:inputType="textPersonName"
         android:textColor="#090909"
         android:textColorHint="#0C0C0C"

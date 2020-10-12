@@ -1,10 +1,5 @@
 <resources>
     <string name="app_name">Bloodlife</string>
-    <string name="name">Name</string>
-    <string name="bgrp">Enter the blood Group</string>
-    <string name="units" />
-    <string name="hos">Hospital</string>
-    <string name="pno">Enter Phone Number</string>
 
     <string name="weight">Enter Your Weight</string>
     <string name="height">Enter the Height</string>
@@ -26,5 +21,14 @@
     <string name="view">View</string>
     <string name="update">UPDATE</string>
     <string name="delete">DELETE</string>
+    <string name="blgrp">Enter the blood group</string>
+    <string name="Divsion">Enter the division</string>
+    <string name="Gender">Gender</string>
+    <string name="Pno">Enter Phone Number</string>
+    <string name="Post">Post</string>
+    <string name="Update">Update</string>
+    <string name="Delete">Delete</string>
+    <string name="blood_donation">Blood Donation</string>
+
 
 </resources>

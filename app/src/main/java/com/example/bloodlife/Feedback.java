@@ -2,13 +2,11 @@ package com.example.bloodlife;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -26,7 +24,6 @@ public class Feedback extends AppCompatActivity {
         namedata=findViewById(R.id.nameData);
         emaildata=findViewById(R.id.emailData);
         messagedata=findViewById(R.id.messageData);
-
         send=findViewById(R.id.btnSent);
         view=findViewById(R.id.btnget);
 
@@ -88,7 +85,6 @@ public class Feedback extends AppCompatActivity {
 
             }
         });
-
 
     }
 }

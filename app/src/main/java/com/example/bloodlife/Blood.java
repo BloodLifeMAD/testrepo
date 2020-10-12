@@ -8,7 +8,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -20,8 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Blood extends AppCompatActivity {
 
 
-    EditText Name, blgrp, Unit, Hos, Phone;
-    Spinner spinner1,spinner2;
+    EditText Name, blgrp, Unit, Div, Phone;
     Button btadd, BtnShow, btnUpdate, btnDel;
     DatabaseReference dbRef;
 
@@ -32,7 +30,7 @@ public class Blood extends AppCompatActivity {
         Name.setText("");
         blgrp.setText("");
         Unit.setText("");
-        Hos.setText("");
+        Div.setText("");
         Phone.setText("");
 
 
@@ -48,7 +46,7 @@ public class Blood extends AppCompatActivity {
         Name = findViewById(R.id.name);
         blgrp = findViewById(R.id.bgrp);
         Unit = findViewById(R.id.units);
-        Hos = findViewById(R.id.hos);
+        Div = findViewById(R.id.hos);
         Phone = findViewById(R.id.Pno);
 
         btadd = findViewById(R.id.add);
@@ -70,7 +68,7 @@ public class Blood extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Please enter the blood group", Toast.LENGTH_SHORT);
                     else if (TextUtils.isEmpty(Unit.getText().toString()))
                         Toast.makeText(getApplicationContext(), "Please enter the Units", Toast.LENGTH_SHORT);
-                    else if (TextUtils.isEmpty(Hos.getText().toString()))
+                    else if (TextUtils.isEmpty(Div.getText().toString()))
                         Toast.makeText(getApplicationContext(), "Please enter the Hospital  ", Toast.LENGTH_SHORT);
 
                     else {
@@ -78,7 +76,7 @@ public class Blood extends AppCompatActivity {
                         DE.setBlgrp(blgrp.getText().toString().trim());
                         DE.setPno(Integer.parseInt(Phone.getText().toString().trim()));
                         DE.setName(Name.getText().toString().trim());
-                        DE.setHos(Hos.getText().toString().trim());
+                        DE.setHos(Div.getText().toString().trim());
                         DE.setUnits(Unit.getText().toString().trim());
 
 
@@ -107,7 +105,7 @@ public class Blood extends AppCompatActivity {
                             Name.setText(dataSnapshot.child("name").getValue().toString());
                             blgrp.setText(dataSnapshot.child("blgrp").getValue().toString());
                             Unit.setText(dataSnapshot.child("units").getValue().toString());
-                            Hos.setText(dataSnapshot.child("hos").getValue().toString());
+                            Div.setText(dataSnapshot.child("hos").getValue().toString());
                             Phone.setText(dataSnapshot.child("pno").getValue().toString());
 
 
@@ -135,7 +133,7 @@ public class Blood extends AppCompatActivity {
                                 DE.setName(Name.getText().toString().trim());
                                 DE.setBlgrp(blgrp.getText().toString().trim());
                                 DE.setUnits(Unit.getText().toString().trim());
-                                DE.setHos(Hos.getText().toString().trim());
+                                DE.setHos(Div.getText().toString().trim());
                                 DE.setPno(Integer.parseInt(Phone.getText().toString().trim()));
 
                                 dbRef = FirebaseDatabase.getInstance().getReference().child("Donar");

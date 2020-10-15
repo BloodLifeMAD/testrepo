@@ -15,6 +15,8 @@ public class BMI extends AppCompatActivity {
     private TextView result;
     Button donor;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,4 +69,6 @@ public class BMI extends AppCompatActivity {
 
 
         }
+
+
 }

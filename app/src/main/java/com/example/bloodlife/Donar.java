@@ -1,52 +1,70 @@
 package com.example.bloodlife;
 
-public class Donar {
-    private String Name;
-    private String blgrp;
-    private String units;
-    private String hos;
-    private Integer pno;
+public class Donar{
+private String name;
+private String email;
+private String div;
+private String address;
+private Integer phone;
+private String gender;
+private String BloodGroup;
 
-    public String getName() {
-        return Name;
+    public String getBloodGroup(){
+        return BloodGroup;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public void setBloodGroup(String bloodGroup){
+        BloodGroup = bloodGroup;
     }
 
-    public String getBlgrp() {
-        return blgrp;
+    public String getGender(){
+        return gender;
     }
 
-    public void setBlgrp(String blgrp) {
-        this.blgrp = blgrp;
+    public void setGender(String gender){
+        this.gender = gender;
     }
 
-    public String getUnits() {
-        return units;
+    public String getName(){
+        return name;
     }
 
-    public void setUnits(String units) {
-        this.units = units;
+    public void setName(String name){
+        this.name = name;
     }
 
-    public String getHos() {
-        return hos;
+    public String getEmail(){
+        return email;
     }
 
-    public void setHos(String hos) {
-        this.hos = hos;
+    public void setEmail(String email){
+        this.email = email;
     }
 
-    public Integer getPno() {
-        return pno;
+    public String getDiv(){
+        return div;
     }
 
-    public void setPno(Integer pno) {
-        this.pno = pno;
+    public void setDiv(String div){
+        this.div = div;
     }
 
-    public Donar() {
+    public String getAddress(){
+        return address;
+    }
+
+    public void setAddress(String address){
+        this.address = address;
+    }
+
+    public Integer getPhone(){
+        return phone;
+    }
+
+    public void setPhone(Integer phone){
+        this.phone = phone;
+    }
+
+    public Donar(){
     }
 }

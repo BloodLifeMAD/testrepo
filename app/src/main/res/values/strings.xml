@@ -31,4 +31,23 @@
     <string name="blood_donation">Blood Donation</string>
 
 
+
+
+    <string name="hintID">Please enter student IDff</string>
+    <string name="hintName">Please enter student name</string>
+    <string name="hindAdd">Please enter student address</string>
+    <string name="hintCon">Please enter  number</string>
+    <string name="stAdd">PLease enter student address</string>
+    <string name="SaveB">Save</string>
+    <string name="ShowB">Show</string>
+    <string name="updateB">Update</string>
+    <string name="deleteB">Delete</string>
+    <string name="uname">uname</string>
+    <string name="Enter_Name">uname</string>
+    <string name="ublood">Enter Blood Group</string>
+    <string name="uun_no">Number of units</string>
+    <string name="uhospital">Enter hospital</string>
+    <string name="uphone">Enter Phone Number</string>
+    <string name="uhome">Enter Home Town</string>
+
 </resources>

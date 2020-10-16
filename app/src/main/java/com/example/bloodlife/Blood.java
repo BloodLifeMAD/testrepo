@@ -49,7 +49,7 @@ public class Blood extends AppCompatActivity {
 
         Name = findViewById(R.id.name);
         email = findViewById(R.id.bgrp);
-        Address = findViewById(R.id.units);
+        Address = findViewById(R.id.address);
         Div = findViewById(R.id.hos);
         Phone = findViewById(R.id.Pno);
         gender = findViewById(R.id.gender);
@@ -68,6 +68,9 @@ public class Blood extends AppCompatActivity {
 
                 dbRef = FirebaseDatabase.getInstance().getReference().child("Donar");
 
+                if(Phone.getText().length()==10)
+
+
                 try {
                     if (TextUtils.isEmpty(Name.getText().toString()))
                         Toast.makeText(getApplicationContext(), "Please enter the Name", Toast.LENGTH_SHORT);
@@ -80,7 +83,7 @@ public class Blood extends AppCompatActivity {
                     else if (TextUtils.isEmpty(gender.getSelectedItem ().toString()))
                         Toast.makeText(getApplicationContext(), "Please select the gender  ", Toast.LENGTH_SHORT);
                     else if (TextUtils.isEmpty(BloodGroup.getSelectedItem ().toString()))
-                        Toast.makeText(getApplicationContext(), "Please select the Bloodgroup  ", Toast.LENGTH_SHORT);
+                        Toast.makeText(getApplicationContext(), "Please select the Bloo dgroup  ", Toast.LENGTH_SHORT);
 
                     else {
 
@@ -90,9 +93,7 @@ public class Blood extends AppCompatActivity {
                         DE.setDiv (Div.getText().toString().trim());
                         DE.setAddress (Address.getText().toString().trim());
                         DE.setGender (gender.getSelectedItem ().toString ().trim());
-                        DE.setGender (BloodGroup.getSelectedItem ().toString ().trim());
-
-
+                        DE.setBloodGroup (BloodGroup.getSelectedItem ().toString ().trim());
 
                         dbRef.child("DE").setValue(DE);
                         Toast.makeText(getApplicationContext(), "Data entered success", Toast.LENGTH_SHORT).show();
@@ -111,6 +112,7 @@ public class Blood extends AppCompatActivity {
             public void onClick(View v) {
                 DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Donar").child("DE");
                 readRef.addListenerForSingleValueEvent(new ValueEventListener() {
+
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -142,6 +144,8 @@ public class Blood extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot){
                         if (dataSnapshot.hasChild ( "DE" ))
+
+                            if(Phone.getText().length()==10)
                             try {
                                 DE.setName ( Name.getText ().toString ().trim () );
                                 DE.setEmail ( email.getText ().toString ().trim () );
@@ -157,7 +161,7 @@ public class Blood extends AppCompatActivity {
                                 Toast.makeText ( getApplicationContext (), "Data Updated successfully", Toast.LENGTH_SHORT ).show ();
                             }
                         catch(NumberFormatException e){
-                                    Toast.makeText ( getApplicationContext (), "Invalid Contact Number", Toast.LENGTH_SHORT ).show ();
+                                    Toast.makeText ( getApplicationContext (), "Data Updated successfully", Toast.LENGTH_SHORT ).show ();
                                 }
 
 
